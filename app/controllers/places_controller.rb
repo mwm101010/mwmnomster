@@ -12,7 +12,10 @@ class PlacesController < ApplicationController
 
 
   def create
-    current_user.places.create(place_params)
+    @place = current_user.places.create(place_params)
+    if @place.invalid?
+    flash[:error] = 'Could not save! Data is invalid.'
+    end
     redirect_to root_path
   end
 
