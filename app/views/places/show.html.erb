@@ -68,7 +68,7 @@
         <h4 class="modal-title" id="myModalLabel">Upload a photo</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @photo, url: place_photoes_path(@place) do |f| %>
+        <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
           <%= f.input :caption %>
           <%= f.input :picture %>
           <%= f.submit "Upload a photo", class: 'btn btn-primary' %>
@@ -90,3 +90,4 @@
   </div>
 <% end %>
 </div>
+
