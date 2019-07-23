@@ -1,4 +1,4 @@
-<div class="booyah-box">
+<div>
 </div>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -35,8 +35,8 @@
 <% @places.each do |place| %>
   <div class="booyah-box col-10 offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
-    <i><%= place.address %></i><br />
-    <p><%= place.description %></p><br />
+    <i><b><%= place.address %></b></i><br />
+    <p><b><%= place.description %></b></p><br />
 
     <% if place.user.present? %>
       <small><%= place.user.email %></small>
@@ -55,11 +55,13 @@
   <% end %>
    
     <% if place.photos.present? %>
-    <div class="img-thumbnail">
+    <figure class="figure">
+    <div class="figure-img img-fluid rounded">
       <% place.photos.each do |photo| %>
       <%= image_tag photo.picture.url %>
-      <%= photo.caption %>
+      <strong><%= photo.caption %></strong>
         </div>
+    </figure>
       <% end %>
     <% end %>
   </div>
